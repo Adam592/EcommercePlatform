@@ -42,7 +42,7 @@ public class ProductCatalogTest {
         assertThat(loaded.getPrice()).isEqualTo(BigDecimal.valueOf(10.10));
     }
     private ProductCatalog thereIsProductCatalog() {
-        return new ProductCatalog();
+        return new ProductCatalog(new ArrayListProductStorage());
     }
 
     @Test
