@@ -6,6 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import pl.ajablonski.ecommerce.catalog.ArrayListProductStorage;
 import pl.ajablonski.ecommerce.catalog.ProductCatalog;
+import pl.ajablonski.ecommerce.sales.InMemoryCartStorage;
+import pl.ajablonski.ecommerce.sales.PayUPaymentGateway;
+import pl.ajablonski.ecommerce.sales.SalesFacade;
+import pl.ajablonski.ecommerce.sales.offering.OfferCalculator;
+import pl.ajablonski.ecommerce.sales.reservation.ReservationRepository;
 
 @SpringBootApplication
 public class App {
@@ -20,5 +25,15 @@ public class App {
         productCatalog.addProduct("Lego set 1", "Nice one");
         productCatalog.addProduct("Cobi set 2", "Nice one");
         return productCatalog;
+    }
+
+    @Bean
+    SalesFacade createMySalesFacade(){
+        return new SalesFacade(
+                new InMemoryCartStorage(),
+                new OfferCalculator(),
+                new PayUPaymentGateway(),
+                new ReservationRepository()
+                );
     }
 }
