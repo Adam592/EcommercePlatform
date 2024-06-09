@@ -1,6 +1,7 @@
 package pl.ajablonski.ecommerce.sales;
 
 import org.junit.jupiter.api.Test;
+import pl.ajablonski.ecommerce.sales.cart.InMemoryCartStorage;
 import pl.ajablonski.ecommerce.sales.offering.Offer;
 import pl.ajablonski.ecommerce.sales.offering.OfferCalculator;
 import pl.ajablonski.ecommerce.sales.reservation.ReservationRepository;

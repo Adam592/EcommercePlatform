@@ -2,7 +2,7 @@ package pl.ajablonski.ecommerce.sales.reservation;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pl.ajablonski.ecommerce.sales.InMemoryCartStorage;
+import pl.ajablonski.ecommerce.sales.cart.InMemoryCartStorage;
 import pl.ajablonski.ecommerce.sales.SalesFacade;
 import pl.ajablonski.ecommerce.sales.offering.AcceptOfferRequest;
 import pl.ajablonski.ecommerce.sales.offering.OfferCalculator;
@@ -10,7 +10,6 @@ import pl.ajablonski.ecommerce.sales.offering.OfferCalculator;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 
 public class OfferAcceptanceTest {

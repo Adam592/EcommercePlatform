@@ -1,7 +1,7 @@
 package pl.ajablonski.ecommerce.sales;
 
-import pl.ajablonski.ecommerce.catalog.ArrayListProductStorage;
 import pl.ajablonski.ecommerce.sales.cart.Cart;
+import pl.ajablonski.ecommerce.sales.cart.InMemoryCartStorage;
 import pl.ajablonski.ecommerce.sales.offering.AcceptOfferRequest;
 import pl.ajablonski.ecommerce.sales.offering.Offer;
 import pl.ajablonski.ecommerce.sales.offering.OfferCalculator;

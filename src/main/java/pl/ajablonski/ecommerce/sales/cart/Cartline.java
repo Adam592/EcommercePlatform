@@ -10,10 +10,10 @@ public class Cartline {
     }
 
     public Object getProductId() {
-        return null;
+        return productId;
     }
 
     public int getQuantity() {
-        return 0;
+        return qty;
     }
 }

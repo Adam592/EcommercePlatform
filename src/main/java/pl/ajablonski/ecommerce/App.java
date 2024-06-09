@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import pl.ajablonski.ecommerce.catalog.ArrayListProductStorage;
 import pl.ajablonski.ecommerce.catalog.ProductCatalog;
-import pl.ajablonski.ecommerce.sales.InMemoryCartStorage;
+import pl.ajablonski.ecommerce.sales.cart.InMemoryCartStorage;
 import pl.ajablonski.ecommerce.sales.PayUPaymentGateway;
 import pl.ajablonski.ecommerce.sales.SalesFacade;
 import pl.ajablonski.ecommerce.sales.offering.OfferCalculator;
