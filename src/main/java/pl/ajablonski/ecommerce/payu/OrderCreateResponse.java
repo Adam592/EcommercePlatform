@@ -26,24 +26,28 @@ public class OrderCreateResponse {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public OrderCreateResponse setStatus(Status status) {
         this.status = status;
+        return this;
     }
 
 
-    public void setRedirectUri(String redirectUri) {
+    public OrderCreateResponse setRedirectUri(String redirectUri) {
         this.redirectUri = redirectUri;
+        return this;
     }
 
-    public void setOrderId(String orderId) {
+    public OrderCreateResponse setOrderId(String orderId) {
         this.orderId = orderId;
+        return this;
     }
 
     public String getExtOrderId() {
         return extOrderId;
     }
 
-    public void setExtOrderId(String extOrderId) {
+    public OrderCreateResponse setExtOrderId(String extOrderId) {
         this.extOrderId = extOrderId;
+        return this;
     }
 }

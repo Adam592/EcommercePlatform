@@ -10,6 +10,9 @@ public class OrderCreateRequest {
     String description;
     String currencyCode;
     Integer totalAmount;
+    String extOrderId;
+
+
     Buyer buyer;
     List<Product> products;
 
@@ -17,63 +20,81 @@ public class OrderCreateRequest {
         return notifyUrl;
     }
 
-    public void setNotifyUrl(String notifyUrl) {
+    public OrderCreateRequest setNotifyUrl(String notifyUrl) {
         this.notifyUrl = notifyUrl;
+        return this;
     }
 
     public String getCustomerIp() {
         return customerIp;
     }
 
-    public void setCustomerIp(String customerIp) {
+    public OrderCreateRequest setCustomerIp(String customerIp) {
         this.customerIp = customerIp;
+        return this;
     }
 
     public String getMerchantPosId() {
         return merchantPosId;
     }
 
-    public void setMerchantPosId(String merchantPosId) {
+    public OrderCreateRequest setMerchantPosId(String merchantPosId) {
         this.merchantPosId = merchantPosId;
+        return this;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public OrderCreateRequest setDescription(String description) {
         this.description = description;
+        return this;
     }
 
     public String getCurrencyCode() {
         return currencyCode;
     }
 
-    public void setCurrencyCode(String currencyCode) {
+    public OrderCreateRequest setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
+        return this;
     }
 
     public Integer getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(Integer totalAmount) {
+    public OrderCreateRequest setTotalAmount(Integer totalAmount) {
         this.totalAmount = totalAmount;
+        return this;
     }
 
     public Buyer getBuyer() {
         return buyer;
     }
 
-    public void setBuyer(Buyer buyer) {
+    public OrderCreateRequest setBuyer(Buyer buyer) {
         this.buyer = buyer;
+        return this;
     }
 
     public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Product> products) {
+    public OrderCreateRequest setProducts(List<Product> products) {
         this.products = products;
+        return this;
+    }
+
+    public String getExtOrderId() {
+        return extOrderId;
+    }
+
+    public OrderCreateRequest setExtOrderId(String extOrderId) {
+        this.extOrderId = extOrderId;
+        return this;
     }
 }
+

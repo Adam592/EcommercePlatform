@@ -36,8 +36,8 @@ public class PayU {
 
     private String getToken() {
         String body = String.format("grant_type=client_credentials&client_id=%s&client_secret=%s",
-                "300746",
-                "2ee86a66e5d97e3fadc400c9f19b065d"
+                payUCredentials.getClientId(),
+                payUCredentials.getClientSecret()
                 );
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
