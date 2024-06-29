@@ -1,8 +1,8 @@
 package pl.ajablonski.ecommerce.sales.reservation;
 
-import pl.ajablonski.ecommerce.sales.PaymentDetails;
-import pl.ajablonski.ecommerce.sales.PaymentGateway;
-import pl.ajablonski.ecommerce.sales.RegisterPaymentRequest;
+import pl.ajablonski.ecommerce.sales.payment.PaymentDetails;
+import pl.ajablonski.ecommerce.sales.payment.PaymentGateway;
+import pl.ajablonski.ecommerce.sales.payment.RegisterPaymentRequest;
 
 public class SpyPaymentGateway implements PaymentGateway {
 

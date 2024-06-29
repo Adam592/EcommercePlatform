@@ -8,7 +8,7 @@ public class ReservationDetail {
     private final String paymentUrl;
     public ReservationDetail(String reservationId, String paymentUrl) {
         this.reservationId = reservationId;
-        this.paymentUrl = paymentUrl
+        this.paymentUrl = paymentUrl;
     }
 
     public String getReservationId() {

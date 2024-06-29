@@ -1,6 +1,6 @@
 package pl.ajablonski.ecommerce.sales.reservation;
 
-import pl.ajablonski.ecommerce.sales.PaymentDetails;
+import pl.ajablonski.ecommerce.sales.payment.PaymentDetails;
 import pl.ajablonski.ecommerce.sales.offering.AcceptOfferRequest;
 
 import java.math.BigDecimal;

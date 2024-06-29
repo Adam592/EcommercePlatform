@@ -1,4 +1,4 @@
-package pl.ajablonski.ecommerce.sales;
+package pl.ajablonski.ecommerce.sales.payment;
 
 public class PaymentDetails {
     private final String url;

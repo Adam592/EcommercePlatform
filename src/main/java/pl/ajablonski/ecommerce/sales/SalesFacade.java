@@ -5,6 +5,9 @@ import pl.ajablonski.ecommerce.sales.cart.InMemoryCartStorage;
 import pl.ajablonski.ecommerce.sales.offering.AcceptOfferRequest;
 import pl.ajablonski.ecommerce.sales.offering.Offer;
 import pl.ajablonski.ecommerce.sales.offering.OfferCalculator;
+import pl.ajablonski.ecommerce.sales.payment.PaymentDetails;
+import pl.ajablonski.ecommerce.sales.payment.PaymentGateway;
+import pl.ajablonski.ecommerce.sales.payment.RegisterPaymentRequest;
 import pl.ajablonski.ecommerce.sales.reservation.Reservation;
 import pl.ajablonski.ecommerce.sales.reservation.ReservationDetail;
 import pl.ajablonski.ecommerce.sales.reservation.ReservationRepository;
@@ -50,6 +53,7 @@ public class SalesFacade {
     public void addToCart(String customerId, String productId) {
         Cart cart = loadCartForCustomer(customerId);
         cart.addProduct(productId);
+        cartStorage.save(customerId, cart);
     }
 
     private Cart loadCartForCustomer(String customerId) {

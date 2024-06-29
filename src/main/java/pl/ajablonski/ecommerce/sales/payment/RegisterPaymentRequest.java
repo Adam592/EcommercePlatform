@@ -1,4 +1,4 @@
-package pl.ajablonski.ecommerce.sales;
+package pl.ajablonski.ecommerce.sales.payment;
 
 import pl.ajablonski.ecommerce.sales.offering.AcceptOfferRequest;
 
