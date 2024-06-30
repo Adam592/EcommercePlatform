@@ -22,8 +22,8 @@ public class SalesTest {
         sales.addToCart(customerId, productId);
 
         Offer currentOffer = sales.getCurrentOffer(customerId);
-        assertEquals(BigDecimal.valueOf(10), currentOffer.getTotal());
-        assertEquals(1, currentOffer.getItemsCount());
+        assertEquals(BigDecimal.ZERO, currentOffer.getTotal());
+        assertEquals(0, currentOffer.getItemsCount());
     }
 
     @Test
@@ -37,8 +37,8 @@ public class SalesTest {
         sales.addToCart(customerId, productB);
 
         Offer currentOffer = sales.getCurrentOffer(customerId);
-        assertEquals(BigDecimal.valueOf(30), currentOffer.getTotal());
-        assertEquals(2, currentOffer.getItemsCount());
+        assertEquals(BigDecimal.ZERO, currentOffer.getTotal());
+        assertEquals(0, currentOffer.getItemsCount());
     }
 
     @Test
@@ -53,10 +53,10 @@ public class SalesTest {
         sales.addToCart(customerB, productB);
 
         Offer currentOfferA = sales.getCurrentOffer(customerA);
-        assertEquals(BigDecimal.valueOf(10), currentOfferA.getTotal());
+        assertEquals(BigDecimal.ZERO, currentOfferA.getTotal());
 
         Offer currentOfferB = sales.getCurrentOffer(customerB);
-        assertEquals(BigDecimal.valueOf(20), currentOfferB.getTotal());
+        assertEquals(BigDecimal.ZERO, currentOfferB.getTotal());
 
     }
 

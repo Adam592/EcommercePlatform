@@ -63,7 +63,7 @@ public class CartTest {
         List<Cartline> lines = cart.getLines();
 
         assertThat(lines)
-                .hasSize(0)
+                .hasSize(1)
                 .extracting("productId")
                 .contains(PRODUCT_1);
 
@@ -94,7 +94,7 @@ public class CartTest {
         List<Cartline> lines = cart.getLines();
 
         assertThat(lines)
-                .hasSize(0)
+                .hasSize(2)
                 .extracting("productId")
                 .contains(PRODUCT_1);
 

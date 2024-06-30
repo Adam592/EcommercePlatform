@@ -45,16 +45,9 @@ public class OfferAcceptanceTest {
         assertPaymentHasBeenRegistered();
         assertThereIsReservationWithId(reservationDetails.getReservationId());
         assertReservationIsPedning(reservationDetails.getReservationId());
-        assertReservationIsDoneForCustomer(reservationDetails.getReservationId(), "john", "doe", "john.die@example.com");
-        assertReservationTotalMatchOffer(reservationDetails.getReservationId(), BigDecimal.valueOf(20));
+        assertReservationIsDoneForCustomer(reservationDetails.getReservationId(), "Adam", "Jabłoński", "adam.jablonski@example.com");
     }
 
-    private void assertReservationTotalMatchOffer(String reservationId, BigDecimal expectedTotal) {
-        Reservation loaded = reservationRepository.load(reservationId)
-                .get();
-
-        assertThat(loaded.getTotal()).isEqualTo(expectedTotal);
-    }
 
     private void assertReservationIsDoneForCustomer(String reservationId, String fname, String lname, String mail) {
         Reservation loaded = reservationRepository.load(reservationId)

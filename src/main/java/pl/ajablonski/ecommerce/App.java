@@ -12,6 +12,8 @@ import pl.ajablonski.ecommerce.sales.SalesFacade;
 import pl.ajablonski.ecommerce.sales.offering.OfferCalculator;
 import pl.ajablonski.ecommerce.sales.reservation.ReservationRepository;
 
+import java.math.BigDecimal;
+
 @SpringBootApplication
 public class App {
     public static void main(String[] args){
@@ -22,8 +24,8 @@ public class App {
     @Bean
     ProductCatalog createMyProductCatalog(){
         ProductCatalog productCatalog = new ProductCatalog(new ArrayListProductStorage());
-        productCatalog.addProduct("Lego set 1", "Nice one");
-        productCatalog.addProduct("Cobi set 2", "Nice one");
+        productCatalog.addProduct("Lego set 1", "Nice one", BigDecimal.valueOf(10));
+        productCatalog.addProduct("Cobi set 2", "Nice one", BigDecimal.valueOf(10));
         return productCatalog;
     }
 

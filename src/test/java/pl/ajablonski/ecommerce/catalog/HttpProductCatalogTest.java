@@ -8,6 +8,8 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.math.BigDecimal;
+
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(
@@ -21,6 +23,24 @@ public class HttpProductCatalogTest {
     TestRestTemplate http;
     @Autowired
     ProductCatalog productCatalog;
+
+    @Test
+    void loadsProducts() {
+        var id = productCatalog.addProduct("Example Product", "test", BigDecimal.valueOf(10));
+        var url = String.format("http://localhost:%s/%s", localPort, "/api/products");
+
+        ResponseEntity<Product[]> response = http.getForEntity(url, Product[].class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody())
+                .extracting("name")
+                .contains("Example Product");
+        assertThat(response.getBody().length).isEqualTo(4); // catalog initialized with 3 products already
+        assertThat(response.getBody())
+                .extracting("id")
+                .containsOnlyOnce(id);
+    }
+
     @Test
     void homepageLoads() {
         var url = String.format("http://localhost:%s/%s", localPort, "/");
@@ -31,16 +51,4 @@ public class HttpProductCatalogTest {
         assertThat(response.getBody()).contains("My Ecommerce");
     }
 
-    @Test
-    void loadsProducts() {
-        var id = productCatalog.addProduct("Example Product", "test");
-        var url = String.format("http://localhost:%s/%s", localPort, "/api/products");
-
-        ResponseEntity<Product[]> response = http.getForEntity(url, Product[].class);
-
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(response.getBody())
-                .extracting("name")
-                .contains("Example Product");
-    }
 }

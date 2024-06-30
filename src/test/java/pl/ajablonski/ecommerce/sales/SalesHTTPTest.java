@@ -47,7 +47,7 @@ public class SalesHTTPTest {
                 .setEmail("adam.jablonski@example.com");
 
         String acceptOfferURL = String.format("http://localhost:%s/%s", port, "api/accept-offer/");
-        ResponseEntity<ReservationDetail> reservationDetailResponseEntity = http.postForEntity(acceptOfferURL,null, ReservationDetail.class);
+        ResponseEntity<ReservationDetail> reservationDetailResponseEntity = http.postForEntity(acceptOfferURL,acceptOfferRequest, ReservationDetail.class);
 
         assertThat(reservationDetailResponseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertNotNull(reservationDetailResponseEntity.getBody().getReservationId());
@@ -56,7 +56,7 @@ public class SalesHTTPTest {
     }
 
     private String thereIsExampleProduct(String name, BigDecimal price){
-        var id = catalog.addProduct(name, name);
+        var id = catalog.addProduct(name, name, price);
         catalog.changePrice(id, price);
         return id;
     }

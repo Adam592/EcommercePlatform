@@ -19,7 +19,7 @@ public class ProductCatalogTest {
     @Test
     void itAllowsToAddProduct(){
         ProductCatalog catalog = thereIsProductCatalog();
-        catalog.addProduct("Legoset 8083", "nice one");
+        catalog.addProduct("Legoset 8083", "nice one", BigDecimal.valueOf(10));
         List<Product> allProducts = catalog.allProducts();
         assertThat(allProducts).hasSize(1);
     }
@@ -27,7 +27,7 @@ public class ProductCatalogTest {
     @Test
     void itLoadsSingleProductById(){
         ProductCatalog catalog = thereIsProductCatalog();
-        String id = catalog.addProduct("Legoset 8083", "nice one");
+        String id = catalog.addProduct("Legoset 8083", "nice one", BigDecimal.valueOf(10));
         Product loaded = catalog.getProductBy(id);
         assertThat(loaded.getId()).isEqualTo(id);
     }
@@ -35,7 +35,7 @@ public class ProductCatalogTest {
     @Test
     void itAllowsToChangePrice(){
         ProductCatalog catalog = thereIsProductCatalog();
-        String id = catalog.addProduct("Legoset 8083", "nice one");
+        String id = catalog.addProduct("Legoset 8083", "nice one", BigDecimal.valueOf(10));
 
         catalog.changePrice(id, BigDecimal.valueOf(10.10));
         Product loaded = catalog.getProductBy(id);
@@ -48,7 +48,7 @@ public class ProductCatalogTest {
     @Test
     void itAllowsToAssignImage(){
         ProductCatalog catalog = thereIsProductCatalog();
-        String id = catalog.addProduct("Legoset 8083", "nice one");
+        String id = catalog.addProduct("Legoset 8083", "nice one", BigDecimal.valueOf(10));
 
         catalog.assignImage(id, "legoset8083.png");
         Product loaded = catalog.getProductBy(id);

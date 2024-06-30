@@ -77,7 +77,7 @@ public class JdbcPlaygroundTest {
 
     @Test
     void itStoreDynamicProducts(){
-        var product = new Product(UUID.randomUUID(), "My lego set", "Nice one");
+        var product = new Product(UUID.randomUUID(), "My lego set", "Nice one", BigDecimal.valueOf(10));
         product.changePrice(BigDecimal.valueOf((10.10)));
         var myInsertSql = """
             INSERT INTO `product_catalog__products` (id, name, price)
@@ -94,7 +94,7 @@ public class JdbcPlaygroundTest {
     }
     @Test
     void loadProductById() {
-        var product = new Product(UUID.randomUUID(), "My lego set", "Nice one");
+        var product = new Product(UUID.randomUUID(), "My lego set", "Nice one", BigDecimal.valueOf(10));
         product.changePrice(BigDecimal.valueOf((10.10)));
 
         var myInsertSql = """
@@ -114,7 +114,8 @@ public class JdbcPlaygroundTest {
                     var myProduct = new Product(
                             UUID.fromString(rs.getString("id")),
                             rs.getString("name"),
-                            rs.getString("name")
+                            rs.getString("name"),
+                            BigDecimal.valueOf(10)
                     );
                     myProduct.changePrice(BigDecimal.valueOf(rs.getDouble("price")));
                     return myProduct;

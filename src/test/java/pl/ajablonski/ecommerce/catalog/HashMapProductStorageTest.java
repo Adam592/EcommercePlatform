@@ -2,6 +2,7 @@ package pl.ajablonski.ecommerce.catalog;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 import  static org.assertj.core.api.Assertions.*;
@@ -17,7 +18,7 @@ public class HashMapProductStorageTest {
     }
 
     private static Product thereIsExampleProduct() {
-        return new Product(UUID.randomUUID(), "test-it", "test");
+        return new Product(UUID.randomUUID(), "test-it", "test", BigDecimal.valueOf(10));
     }
 
     private ProductStorage thereIsHashMapStorage() {
